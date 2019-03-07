@@ -24,6 +24,7 @@
                                 <state key="normal" title="My Guess"/>
                                 <connections>
                                     <action selector="MyGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i6u-Bg-rfI"/>
+                                    <action selector="myGuessButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="diu-Ar-Ud0"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qg2-qd-bel">

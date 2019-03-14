@@ -12,6 +12,8 @@ class ViewController: UIViewController {
 
     @IBOutlet var Slider: UISlider!
     
+    @IBOutlet weak var targetLabel: UILabel!
+    
     var currentValue: Int = 0
     
     var targetValue: Int = 0
@@ -22,6 +24,9 @@ class ViewController: UIViewController {
         currentValue = lroundf(Slider.value)
         
         startNewRound()
+        
+        let thumbImageNormal = UIImage(named: "SliderThumb-Normal")
+        Slider.setThumbImage(thumbImageNormal, for: .normal)
 
     }
 
@@ -40,7 +45,14 @@ class ViewController: UIViewController {
         targetValue = 1 + Int(arc4random_uniform(100))
         currentValue = 50
         Slider.value = Float(currentValue)
+        
+    updateTargetLabel()
+    }
     
+    func updateTargetLabel(){
+        
+        targetLabel.text = String(targetValue)
+        
     }
     
     @IBAction func myGuessButtonPressed(_ sender: Any) {

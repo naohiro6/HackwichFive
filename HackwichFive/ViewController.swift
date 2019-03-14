@@ -21,8 +21,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         currentValue = lroundf(Slider.value)
         
-        targetValue = +Int(arc4random_uniform(100))
-        
+        startNewRound()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,9 +36,16 @@ class ViewController: UIViewController {
         currentValue = lroundf(Slider.value)
     }
     
+    func startNewRound(){
+        targetValue = 1 + Int(arc4random_uniform(100))
+        currentValue = 50
+        Slider.value = Float(currentValue)
+    
+    }
+    
     @IBAction func myGuessButtonPressed(_ sender: Any) {
     
-        let message = "The value is: \(currentValue)"
+        let message = "The value is: \(currentValue)" + "\nThe target value is: \(targetValue)"
         
         let alert = UIAlertController(title:"Hello World!", message: message, preferredStyle: .alert)
         
@@ -47,6 +54,8 @@ class ViewController: UIViewController {
         alert.addAction(action)
         
         present(alert, animated: true, completion: nil)
+        
+        startNewRound()
     }
     
 }

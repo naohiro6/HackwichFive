@@ -14,9 +14,15 @@ class ViewController: UIViewController {
     
     var currentValue: Int = 0
     
+    var targetValue: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        currentValue = lroundf(Slider.value)
+        
+        targetValue = +Int(arc4random_uniform(100))
+        
     }
 
     override func didReceiveMemoryWarning() {
